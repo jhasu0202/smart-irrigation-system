@@ -76,14 +76,14 @@ def train_model(csv_path: str, file_mtime: float):
         raise ValueError("The dataset has no feature columns.")
 
     # Keep the same feature names and preprocessing for training and user predictions.
-    from pandas.api.types import is_bool_dtype, is_object_dtype, is_categorical_dtype, is_string_dtype
+    from pandas.api.types import is_bool_dtype, is_object_dtype, is_string_dtype
 
     categorical = [
-        c for c in X.columns
-        if is_object_dtype(X[c].dtype)
-        or is_categorical_dtype(X[c].dtype)
-        or is_bool_dtype(X[c].dtype)
-        or is_string_dtype(X[c].dtype)
+  	c for c in X.columns
+	if is_object_dtype(X[c].dtype)
+	or isinstance(X[c].dtype, pd.CategoricalDtype)
+	or is_bool_dtype(X[c].dtype)
+	or is_string_dtype(X[c].dtype)
     ]
     numeric = [c for c in X.columns if c not in categorical]
 
