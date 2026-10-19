@@ -106,7 +106,7 @@ def train_model(csv_path: str, file_mtime: float):
             n_estimators=300,
             random_state=42,
             class_weight="balanced",
-            min_samples_leaf=1,
+            min_samples_leaf=4,
             n_jobs=-1,
         )),
     ])
