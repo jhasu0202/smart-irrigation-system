@@ -34,15 +34,69 @@ st.set_page_config(
 st.markdown(
     """
     <style>
-      .stApp { background: linear-gradient(180deg, #f4faf5 0%, #ffffff 40%); }
-      .block-container { padding-top: 1.7rem; padding-bottom: 2.5rem; max-width: 1400px; }
-      .hero { padding: 1.5rem 1.8rem; border-radius: 18px; background: linear-gradient(120deg,#14532d,#16a34a);
-              color: white; margin-bottom: 1rem; }
-      .hero h1 { color: white; margin: 0; font-size: 2.2rem; }
-      .hero p { color: #e7fbe9; margin: .45rem 0 0 0; font-size: 1.05rem; }
-      div[data-testid="stMetric"] { background: white; padding: 1rem; border: 1px solid #e2eee4;
-                                   border-radius: 14px; box-shadow: 0 2px 8px rgba(20,83,45,.05); }
-      .note { background:#eff6ff; border-left:4px solid #3b82f6; padding:.8rem 1rem; border-radius:8px; }
+      .stApp {
+        background: linear-gradient(180deg, #eef7f0 0%, #f8fbf9 100%);
+        color: #14281d;
+      }
+      .block-container {
+        padding-top: 1.7rem;
+        padding-bottom: 2.5rem;
+        max-width: 1400px;
+      }
+      /* Ensure all general text, headers, labels, and captions are dark & readable */
+      .stApp p, .stApp span, .stApp label, .stApp h1, .stApp h2, .stApp h3, .stApp li {
+        color: #14281d;
+      }
+      /* Keep sidebar dark with crisp white/light text */
+      section[data-testid="stSidebar"] {
+        background-color: #12261b;
+      }
+      section[data-testid="stSidebar"] p,
+      section[data-testid="stSidebar"] span,
+      section[data-testid="stSidebar"] h1,
+      section[data-testid="stSidebar"] h2,
+      section[data-testid="stSidebar"] h3,
+      section[data-testid="stSidebar"] small {
+        color: #e6f4ea !important;
+      }
+      /* Hero banner */
+      .hero {
+        padding: 1.5rem 1.8rem;
+        border-radius: 18px;
+        background: linear-gradient(120deg, #14532d, #16a34a);
+        color: white !important;
+        margin-bottom: 1rem;
+      }
+      .hero h1 { color: #ffffff !important; margin: 0; font-size: 2.2rem; }
+      .hero p { color: #e7fbe9 !important; margin: .45rem 0 0 0; font-size: 1.05rem; }
+      /* Metric cards */
+      div[data-testid="stMetric"] {
+        background: #ffffff;
+        padding: 1rem 1.2rem;
+        border: 1px solid #cce3d2;
+        border-radius: 14px;
+        box-shadow: 0 2px 8px rgba(20, 83, 45, .07);
+      }
+      div[data-testid="stMetricLabel"] p {
+        color: #3b5e47 !important;
+        font-weight: 600;
+      }
+      div[data-testid="stMetricValue"] div {
+        color: #14532d !important;
+        font-weight: 700;
+      }
+      /* Tabs & notes */
+      button[data-baseweb="tab"] p {
+        color: #14532d !important;
+        font-weight: 600;
+      }
+      .note {
+        background: #e0f2fe;
+        color: #0c4a6e !important;
+        border-left: 4px solid #0284c7;
+        padding: .8rem 1rem;
+        border-radius: 8px;
+      }
     </style>
     """,
     unsafe_allow_html=True,
