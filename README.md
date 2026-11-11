@@ -7,9 +7,9 @@ A Streamlit-based educational dashboard that trains a Random Forest classifier f
 ## Features
 
 - Dataset-driven categorical choices (no hard-coded label encoding for prediction inputs).
-- Preprocessing pipeline with imputation and one-hot encoding.
-- Random Forest classification model.
-- Holdout accuracy, confusion matrix, and per-class precision/recall/F1.
+- Preprocessing pipeline with imputation and one-hot encoding inside a scikit-learn `Pipeline`.
+- Balanced Random Forest classification model (`class_weight="balanced"`).
+- Holdout accuracy, high-contrast confusion matrix, per-class precision/recall/F1, and top feature importances.
 - Interactive prediction form based on the dataset's actual feature columns.
 - Dataset preview, class distribution, missing-value overview, and CSV download.
 
@@ -53,3 +53,7 @@ The CSV must include a target column named `Irrigation_Need`. All other columns 
 ## Credits
 
 Retain and update attribution to the original project author/source as appropriate. If you redistribute or adapt this project, preserve any applicable license and acknowledgements from the original repository.
+
+## Author
+
+Developed by **Jhasveni Jamisetty** ('@jhasu0202').
